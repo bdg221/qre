@@ -10,6 +10,7 @@ to install the extra.
 import os
 from pathlib import Path
 
+
 from orquestra.integrations.qiskit.conversions import import_from_qiskit
 from qiskit.circuit import QuantumCircuit
 
@@ -31,10 +32,11 @@ from benchq.resource_estimators.graph_estimators import (
 from benchq.resource_estimators.default_estimators import (
     get_precise_graph_estimate,
     get_footprint_estimate,
+    get_fast_graph_estimate
 )
 
 
-def main(file_name):
+def main(file_name, flag = True):
     # Uncomment to see extra debug output
     # logging.getLogger().setLevel(logging.INFO)
 
@@ -67,11 +69,12 @@ def main(file_name):
     # a graph from subcircuits. It is needed to perform resource estimation using
     # the graph resource estimator. In this case we use delayed gate synthesis, as
     # we have already performed gate synthesis in the previous step.
-        
-    print("STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
-    footprint_resource_estimates = get_footprint_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model)
 
-    pprint(footprint_resource_estimates)
+    if flag == True:        
+        print("STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
+        footprint_resource_estimates = get_footprint_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model)
+        pprint(footprint_resource_estimates)
+
 
     print("\n\nSTARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
     gsc_resource_estimates = get_custom_resource_estimation(
@@ -79,7 +82,7 @@ def main(file_name):
         estimator=GraphResourceEstimator(architecture_model),
         transformers=[
             transpile_to_native_gates,
-            synthesize_clifford_t(error_budget),
+            #synthesize_clifford_t(error_budget),
             create_big_graph_from_subcircuits(),
         ],
     )
@@ -88,14 +91,19 @@ def main(file_name):
     print("\n\nSTARTING DETAILED RESOURCE ESTIMATION WITH A DECODER MODEL AND DETAILED HARDWARE MODEL:")
 
     # Load some dummy decoder data for now. Replace with your own decoder data.
-    decoder_file_path = str(Path(__file__).parent / "data" / "sample_decoder_data.csv")
+    decoder_file_path =  str(os.path.dirname(__file__)) + "/sample_decoder_data.csv"
     decoder_model = DecoderModel.from_csv(decoder_file_path) 
 
     architecture_model2 = DETAILED_ION_TRAP_ARCHITECTURE_MODEL
 
-    gsc_resource_estimates_pipeline = get_precise_graph_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model2, decoder_model=decoder_model)
+    gsc_resource_estimates_pipeline = get_fast_graph_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model2, decoder_model=decoder_model)
     pprint(gsc_resource_estimates_pipeline)
 
 if __name__ == "__main__":
     current_directory = os.path.dirname(__file__)
-    main(current_directory + "/data/example_circuit.qasm")
+    print("\n######################## SINGLE ROTATION EXAMPLE ########################")
+    main(current_directory + "/../QASM/single_rotation.qasm")
+    print("\n######################## CNOT EXAMPLE ########################")
+    main(current_directory + "/../QASM/cnot.qasm", flag=False)
+    print("\n######################## TOFFOLI EXAMPLE ########################")
+    main(current_directory + "/../QASM/toffoli.qasm")

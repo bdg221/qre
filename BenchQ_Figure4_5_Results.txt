@@ -1,0 +1,83 @@
+STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
+Transpiling to native gates...
+Transpiled in 0.003509044647216797 seconds.
+ResourceInfo(code_distance=9,
+             logical_error_rate=0.00013739382625325123,
+             n_logical_qubits=4,
+             n_physical_qubits=139440,
+             total_time_in_seconds=11.44,
+             decoder_info=None,
+             magic_state_factory_name='AutoCCZ(0.0001,7, 11)',
+             routing_to_measurement_volume_ratio=0.5,
+             extra=OpenFermionExtra(fail_rate_msFactory=1.368104005423e-10,
+                                    rounds_magicstateFactory=55,
+                                    scc_time=0.001,
+                                    physical_qubit_error_rate=0.0001),
+             hardware_resource_info=None)
+
+
+STARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
+Transpiling to native gates...
+Transpiled in 0.001171112060546875 seconds.
+Creating big graph from subcircuits...
+getting networkx graph from vertices
+time:  0.07204413414001465
+getting max graph degree
+starting substrate scheduler
+substrate scheduler took 0.006181001663208008 seconds
+ResourceInfo(code_distance=10,
+             logical_error_rate=3.715601761291067e-05,
+             n_logical_qubits=208,
+             n_physical_qubits=58000,
+             total_time_in_seconds=254.07659999999998,
+             decoder_info=None,
+             magic_state_factory_name='(15-to-1)^4_9,3,3 x (20-to-4)_15,7,9',
+             routing_to_measurement_volume_ratio=0.083360687288794,
+             extra=GraphData(max_graph_degree=104,
+                             n_nodes=441,
+                             n_t_gates=387,
+                             n_rotation_gates=0,
+                             n_measurement_steps=353),
+             hardware_resource_info=None)
+
+
+STARTING DETAILED RESOURCE ESTIMATION WITH A DECODER MODEL AND DETAILED HARDWARE MODEL:
+Transpiling to native gates...
+Transpiled in 0.001257181167602539 seconds.
+Creating big graph from subcircuits...
+getting networkx graph from vertices
+time:  0.015262126922607422
+getting max graph degree
+starting substrate scheduler
+substrate scheduler took 0.005578041076660156 seconds
+ResourceInfo(code_distance=10,
+             logical_error_rate=3.715601761291067e-05,
+             n_logical_qubits=208,
+             n_physical_qubits=58000,
+             total_time_in_seconds=254.07659999999998,
+             decoder_info=DecoderInfo(total_energy_in_joules=2.2019972000000007e-06,
+                                      power_in_watts=0.010400000000000001,
+                                      area_in_micrometers_squared=104000.0),
+             magic_state_factory_name='(15-to-1)^4_9,3,3 x (20-to-4)_15,7,9',
+             routing_to_measurement_volume_ratio=0.083360687288794,
+             extra=GraphData(max_graph_degree=104,
+                             n_nodes=441,
+                             n_t_gates=387,
+                             n_rotation_gates=0,
+                             n_measurement_steps=353),
+             hardware_resource_info=DetailedIonTrapResourceInfo(power_consumed_per_elu_in_kilowatts=5.0,
+                                                                num_communication_ports_per_elu=280,
+                                                                second_switch_per_elu_necessary=False,
+                                                                num_communication_qubits_per_elu=280,
+                                                                num_memory_qubits_per_elu=10,
+                                                                num_computational_qubits_per_elu=200,
+                                                                num_optical_cross_connect_layers=-1,
+                                                                num_ELUs_per_optical_cross_connect=-1,
+                                                                total_num_ions=101920,
+                                                                total_num_communication_qubits=58240,
+                                                                total_num_memory_qubits=2080,
+                                                                total_num_computational_qubits=41600,
+                                                                total_num_communication_ports=58240,
+                                                                num_elus=208,
+                                                                total_elu_power_consumed_in_kilowatts=1040.0,
+                                                                total_elu_energy_consumed_in_kilojoules=264239.664))

@@ -68,10 +68,10 @@ def main(file_name):
     # the graph resource estimator. In this case we use delayed gate synthesis, as
     # we have already performed gate synthesis in the previous step.
         
-    # print("STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
-    # footprint_resource_estimates = get_footprint_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model)
+    print("STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
+    footprint_resource_estimates = get_footprint_estimate(algorithm_implementation=algorithm_implementation, hardware_model=architecture_model)
 
-    # pprint(footprint_resource_estimates)
+    pprint(footprint_resource_estimates)
 
     print("\n\nSTARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL")
     gsc_resource_estimates = get_custom_resource_estimation(
@@ -88,7 +88,7 @@ def main(file_name):
     print("\n\nSTARTING DETAILED RESOURCE ESTIMATION WITH A DECODER MODEL AND DETAILED HARDWARE MODEL:")
 
     # Load some dummy decoder data for now. Replace with your own decoder data.
-    decoder_file_path = str(Path(__file__).parent / "data" / "sample_decoder_data.csv")
+    decoder_file_path = str(Path(__file__).parent / "BenchQ" / "sample_decoder_data.csv")
     decoder_model = DecoderModel.from_csv(decoder_file_path) 
 
     architecture_model2 = DETAILED_ION_TRAP_ARCHITECTURE_MODEL
@@ -98,9 +98,4 @@ def main(file_name):
 
 if __name__ == "__main__":
     current_directory = os.path.dirname(__file__)
-    print("\n######################## SINGLE ROTATION EXAMPLE ########################")
-    main(current_directory + "/data/single_rotation.qasm")
-    print("\n######################## CNOT ROTATION EXAMPLE ########################")
-    main(current_directory + "/data/cnot.qasm")
-    print("\n######################## TOFFOLI ROTATION EXAMPLE ########################")
-    main(current_directory + "/data/toffoli.qasm")
+    main(current_directory + "/QASM/example_circuit.qasm")

@@ -20,13 +20,13 @@ ResourceInfo(code_distance=7,
 
 STARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
 Transpiling to native gates...
-Transpiled in 4.124641418457031e-05 seconds.
+Transpiled in 4.1961669921875e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  0.0002472400665283203
+time:  0.0002307891845703125
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 2.288818359375e-05 seconds
+substrate scheduler took 2.47955322265625e-05 seconds
 ResourceInfo(code_distance=6,
              logical_error_rate=0.00011078434399217188,
              n_logical_qubits=2,
@@ -48,10 +48,10 @@ Transpiling to native gates...
 Transpiled in 7.82012939453125e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  1.6927719116210938e-05
+time:  1.7881393432617188e-05
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 1.5020370483398438e-05 seconds
+substrate scheduler took 1.621246337890625e-05 seconds
 ResourceInfo(code_distance=6,
              logical_error_rate=0.00011078434399217188,
              n_logical_qubits=2,
@@ -89,13 +89,13 @@ ResourceInfo(code_distance=6,
 
 STARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
 Transpiling to native gates...
-Transpiled in 2.4080276489257812e-05 seconds.
+Transpiled in 2.193450927734375e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  8.821487426757812e-06
+time:  7.867813110351562e-06
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 1.5735626220703125e-05 seconds
+substrate scheduler took 1.71661376953125e-05 seconds
 ResourceInfo(code_distance=4,
              logical_error_rate=7.87099259117548e-05,
              n_logical_qubits=2,
@@ -114,13 +114,13 @@ ResourceInfo(code_distance=4,
 
 STARTING DETAILED RESOURCE ESTIMATION WITH A DECODER MODEL AND DETAILED HARDWARE MODEL:
 Transpiling to native gates...
-Transpiled in 2.09808349609375e-05 seconds.
+Transpiled in 1.5974044799804688e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  7.867813110351562e-06
+time:  7.152557373046875e-06
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 1.5020370483398438e-05 seconds
+substrate scheduler took 1.1920928955078125e-05 seconds
 ResourceInfo(code_distance=4,
              logical_error_rate=7.87099259117548e-05,
              n_logical_qubits=2,
@@ -156,7 +156,7 @@ ResourceInfo(code_distance=4,
 ######################## TOFFOLI EXAMPLE ########################
 STARTING FOOTPRINT RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
 Transpiling to native gates...
-Transpiled in 7.033348083496094e-05 seconds.
+Transpiled in 6.723403930664062e-05 seconds.
 ResourceInfo(code_distance=7,
              logical_error_rate=1.529468607353123e-05,
              n_logical_qubits=3,
@@ -174,13 +174,13 @@ ResourceInfo(code_distance=7,
 
 STARTING RESOURCE ESTIMATION WITHOUT A DECODER MODEL OR DETAILED HARDWARE MODEL
 Transpiling to native gates...
-Transpiled in 7.486343383789062e-05 seconds.
+Transpiled in 5.817413330078125e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  1.3589859008789062e-05
+time:  1.0013580322265625e-05
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 1.7881393432617188e-05 seconds
+substrate scheduler took 1.52587890625e-05 seconds
 ResourceInfo(code_distance=6,
              logical_error_rate=5.223256646348628e-05,
              n_logical_qubits=8,
@@ -199,13 +199,13 @@ ResourceInfo(code_distance=6,
 
 STARTING DETAILED RESOURCE ESTIMATION WITH A DECODER MODEL AND DETAILED HARDWARE MODEL:
 Transpiling to native gates...
-Transpiled in 6.508827209472656e-05 seconds.
+Transpiled in 5.888938903808594e-05 seconds.
 Creating big graph from subcircuits...
 getting networkx graph from vertices
-time:  2.002716064453125e-05
+time:  9.059906005859375e-06
 getting max graph degree
 starting substrate scheduler
-substrate scheduler took 1.8835067749023438e-05 seconds
+substrate scheduler took 1.2159347534179688e-05 seconds
 ResourceInfo(code_distance=6,
              logical_error_rate=5.223256646348628e-05,
              n_logical_qubits=8,
